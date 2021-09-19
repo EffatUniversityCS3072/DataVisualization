@@ -1,0 +1,39 @@
+---
+title: "week4"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## tidyverse
+We always need to tidyverse for data visualization
+
+```{r}
+library(tidyverse)
+```
+
+## importing the dataset
+
+```{r}
+mn_homes <- read.csv("data/mn_homes.csv")
+glimpse(mn_homes)
+summary(mn_homes)
+```
+##ggplot
+this fuction is the main one used for data visualization. It has several attributes and layers. We will explore the different configurations for this function together
+
+### Basic plot
+```{r}
+ggplot(data=mn_homes,mapping = aes(x=area,y=salesprice))
+```
+###Scatterplot
+Now we will draw the actual values in dataset into the diagram above
+
+```{r}
+ggplot(data=mn_homes,mapping = aes(x=area,y=salesprice))+
+  geom_point()
+```
+
+
